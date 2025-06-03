@@ -1,13 +1,77 @@
 
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import ServiceCard from '@/components/ServiceCard';
 import PropertyCard from '@/components/PropertyCard';
+import InfoCard from '@/components/InfoCard';
+import InfoModal from '@/components/InfoModal';
 import ValuationCalculator from '@/components/ValuationCalculator';
 import { ArrowRight, CheckCircle, Star, Users, Home, TrendingUp } from 'lucide-react';
 
 const Index = () => {
+  const [selectedInfo, setSelectedInfo] = useState<any>(null);
+
+  const infoCards = [
+    {
+      title: "Property Investment Consulting",
+      description: "Expert guidance for profitable real estate investments in Kenya's growing market.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      content: "Our property investment consulting service provides comprehensive analysis and strategic guidance for both local and international investors looking to capitalize on Kenya's dynamic real estate market. We conduct thorough market research, identify high-potential investment opportunities, and provide detailed financial projections to ensure maximum returns on your investment.",
+      features: [
+        "Market analysis and investment opportunity identification",
+        "Financial modeling and ROI projections",
+        "Risk assessment and mitigation strategies",
+        "Legal compliance and due diligence support",
+        "Portfolio diversification recommendations",
+        "Exit strategy planning"
+      ]
+    },
+    {
+      title: "Commercial Property Solutions",
+      description: "Comprehensive commercial real estate services for businesses and corporations.",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      content: "We specialize in providing end-to-end commercial property solutions that cater to the unique needs of businesses across various industries. From office spaces in Nairobi's CBD to industrial warehouses and retail outlets, we help businesses find, acquire, and manage properties that align with their operational requirements and growth objectives.",
+      features: [
+        "Office space leasing and acquisition",
+        "Industrial and warehouse solutions",
+        "Retail space development and management",
+        "Corporate real estate consulting",
+        "Lease negotiation and management",
+        "Space planning and optimization"
+      ]
+    },
+    {
+      title: "Residential Development Projects",
+      description: "Creating modern, sustainable residential communities across Nairobi and beyond.",
+      image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      content: "Our residential development projects focus on creating high-quality, sustainable living spaces that meet the evolving needs of modern families. We develop everything from luxury apartments in prime locations to affordable housing units, ensuring each project incorporates the latest in design, technology, and environmental sustainability.",
+      features: [
+        "Luxury apartment developments",
+        "Affordable housing projects",
+        "Gated community developments",
+        "Sustainable building practices",
+        "Modern amenities and facilities",
+        "Strategic location selection"
+      ]
+    },
+    {
+      title: "Property Technology Solutions",
+      description: "Innovative technology solutions for modern property management and operations.",
+      image: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      content: "We leverage cutting-edge property technology to streamline operations, enhance tenant experiences, and maximize property value. Our PropTech solutions include digital property management platforms, virtual touring systems, automated maintenance scheduling, and advanced security systems that bring your properties into the digital age.",
+      features: [
+        "Digital property management platforms",
+        "Virtual property tours and showcasing",
+        "Automated maintenance and service requests",
+        "Smart building and IoT integration",
+        "Online rental and sales platforms",
+        "Advanced security and access control systems"
+      ]
+    }
+  ];
+
   const services = [
     {
       title: "Property Valuation",
@@ -129,8 +193,8 @@ const Index = () => {
             
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Modern Property"
+                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Modern Real Estate Development"
                 className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
               />
               <div className="absolute -bottom-6 -left-6 bg-white text-secondary-800 p-6 rounded-xl shadow-xl">
@@ -144,8 +208,33 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Information Cards Section */}
       <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
+              Our Expertise
+            </h2>
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
+              Comprehensive real estate solutions backed by years of experience and industry expertise
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {infoCards.map((card, index) => (
+              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <InfoCard 
+                  {...card} 
+                  onClick={() => setSelectedInfo(card)}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
@@ -176,7 +265,7 @@ const Index = () => {
       </section>
 
       {/* Featured Properties */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
@@ -249,6 +338,15 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Info Modal */}
+      {selectedInfo && (
+        <InfoModal
+          isOpen={!!selectedInfo}
+          onClose={() => setSelectedInfo(null)}
+          {...selectedInfo}
+        />
+      )}
     </div>
   );
 };
