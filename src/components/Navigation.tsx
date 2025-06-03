@@ -16,7 +16,14 @@ const Navigation = () => {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
+    { 
+      name: 'About', 
+      href: '/about',
+      submenu: [
+        { name: 'Company Overview', href: '/about' },
+        { name: 'Key Personnel', href: '/about#personnel' },
+      ]
+    },
     { 
       name: 'Services', 
       href: '/services',
