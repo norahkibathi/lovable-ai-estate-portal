@@ -1,12 +1,254 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import ServiceCard from '@/components/ServiceCard';
+import PropertyCard from '@/components/PropertyCard';
+import ValuationCalculator from '@/components/ValuationCalculator';
+import { ArrowRight, CheckCircle, Star, Users, Home, TrendingUp } from 'lucide-react';
 
 const Index = () => {
+  const services = [
+    {
+      title: "Property Valuation",
+      description: "Professional property valuation services using modern techniques and market analysis.",
+      icon: "📊",
+      link: "/services/valuation",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Property Management",
+      description: "Comprehensive property management solutions for residential and commercial properties.",
+      icon: "🏢",
+      link: "/services/management",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Sales & Marketing",
+      description: "Expert real estate sales and marketing services to maximize your property value.",
+      icon: "💼",
+      link: "/services/sales",
+      image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    }
+  ];
+
+  const featuredProperties = [
+    {
+      id: "1",
+      title: "Modern Villa in Karen",
+      location: "Karen, Nairobi",
+      price: "KSH 45,000,000",
+      type: "Villa",
+      bedrooms: 5,
+      bathrooms: 4,
+      size: "350 sqm",
+      image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      status: "For Sale" as const,
+      description: "Luxurious 5-bedroom villa with modern amenities, swimming pool, and beautiful garden in the prestigious Karen area."
+    },
+    {
+      id: "2",
+      title: "Executive Apartment",
+      location: "Westlands, Nairobi",
+      price: "KSH 180,000/month",
+      type: "Apartment",
+      bedrooms: 3,
+      bathrooms: 2,
+      size: "140 sqm",
+      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      status: "For Rent" as const,
+      description: "Contemporary 3-bedroom apartment in the heart of Westlands with excellent amenities and city views."
+    },
+    {
+      id: "3",
+      title: "Commercial Building",
+      location: "CBD, Nairobi",
+      price: "KSH 120,000,000",
+      type: "Commercial",
+      size: "800 sqm",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      status: "For Sale" as const,
+      description: "Prime commercial building in Nairobi CBD perfect for office spaces or retail outlets."
+    }
+  ];
+
+  const stats = [
+    { icon: Home, value: "500+", label: "Properties Managed" },
+    { icon: Users, value: "300+", label: "Happy Clients" },
+    { icon: TrendingUp, value: "95%", label: "Success Rate" },
+    { icon: Star, value: "4.9", label: "Client Rating" }
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8 animate-fade-in">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">
+                Your Trusted
+                <span className="block text-yellow-400">Real Estate</span>
+                Partner in Kenya
+              </h1>
+              <p className="text-xl md:text-2xl text-blue-100 leading-relaxed">
+                Professional property valuation, management, and consultancy services 
+                across Nairobi and beyond.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/properties">
+                  <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100 w-full sm:w-auto">
+                    Search Properties
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <ValuationCalculator 
+                  triggerText="Estimate Property Value"
+                  triggerVariant="outline"
+                  triggerSize="lg"
+                />
+              </div>
+
+              <div className="flex items-center space-x-8 pt-4">
+                <div className="text-center">
+                  <div className="text-2xl font-bold">15+</div>
+                  <div className="text-sm text-blue-200">Years Experience</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold">500+</div>
+                  <div className="text-sm text-blue-200">Properties</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold">300+</div>
+                  <div className="text-sm text-blue-200">Happy Clients</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Modern Property"
+                className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
+              />
+              <div className="absolute -bottom-6 -left-6 bg-white text-secondary-800 p-6 rounded-xl shadow-xl">
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="h-6 w-6 text-green-500" />
+                  <span className="font-semibold">Certified Valuers</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
+              Our Professional Services
+            </h2>
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
+              Comprehensive real estate solutions tailored to meet your specific needs
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <ServiceCard {...service} />
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link to="/services">
+              <Button size="lg" className="bg-primary-600 hover:bg-primary-700">
+                View All Services
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Properties */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
+              Featured Properties
+            </h2>
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
+              Discover premium properties across Nairobi's most sought-after locations
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredProperties.map((property, index) => (
+              <div key={property.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <PropertyCard {...property} />
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link to="/properties">
+              <Button size="lg" variant="outline" className="hover:bg-primary-600 hover:text-white">
+                View All Properties
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 bg-primary-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <Card key={index} className="bg-white/10 border-white/20 text-center p-6 hover:bg-white/20 transition-colors">
+                <CardContent className="p-0">
+                  <stat.icon className="h-8 w-8 mx-auto mb-4 text-yellow-400" />
+                  <div className="text-3xl font-bold mb-2">{stat.value}</div>
+                  <div className="text-blue-100">{stat.label}</div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-secondary-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl text-secondary-300 mb-8 max-w-2xl mx-auto">
+            Whether you need a property valuation, management services, or expert consultation, 
+            we're here to help you make informed real estate decisions.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/contact">
+              <Button size="lg" className="bg-primary-600 hover:bg-primary-700 w-full sm:w-auto">
+                Get a Quote
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary-800 w-full sm:w-auto">
+                Contact Us
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

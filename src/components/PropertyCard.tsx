@@ -1,0 +1,106 @@
+
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { MapPin, BedDouble, Bath, Square } from 'lucide-react';
+
+interface PropertyCardProps {
+  id: string;
+  title: string;
+  location: string;
+  price: string;
+  type: string;
+  bedrooms?: number;
+  bathrooms?: number;
+  size?: string;
+  image: string;
+  status: 'For Sale' | 'For Rent' | 'Sold' | 'Managed';
+  description: string;
+}
+
+const PropertyCard = ({ 
+  title, 
+  location, 
+  price, 
+  type, 
+  bedrooms, 
+  bathrooms, 
+  size, 
+  image, 
+  status, 
+  description 
+}: PropertyCardProps) => {
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'For Sale': return 'bg-green-100 text-green-800';
+      case 'For Rent': return 'bg-blue-100 text-blue-800';
+      case 'Sold': return 'bg-gray-100 text-gray-800';
+      case 'Managed': return 'bg-purple-100 text-purple-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
+
+  return (
+    <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+      <div className="relative">
+        <img 
+          src={image} 
+          alt={title}
+          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+        <Badge className={`absolute top-3 left-3 ${getStatusColor(status)}`}>
+          {status}
+        </Badge>
+        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-sm font-semibold text-secondary-800">
+          {price}
+        </div>
+      </div>
+      
+      <CardHeader className="pb-2">
+        <h3 className="font-heading font-semibold text-lg text-secondary-800 group-hover:text-primary-600 transition-colors">
+          {title}
+        </h3>
+        <div className="flex items-center text-secondary-500 text-sm">
+          <MapPin className="h-4 w-4 mr-1" />
+          {location}
+        </div>
+      </CardHeader>
+      
+      <CardContent className="pt-0">
+        <p className="text-secondary-600 text-sm mb-4 line-clamp-2">{description}</p>
+        
+        <div className="flex items-center space-x-4 text-sm text-secondary-500 mb-4">
+          {bedrooms && (
+            <div className="flex items-center">
+              <BedDouble className="h-4 w-4 mr-1" />
+              {bedrooms} beds
+            </div>
+          )}
+          {bathrooms && (
+            <div className="flex items-center">
+              <Bath className="h-4 w-4 mr-1" />
+              {bathrooms} baths
+            </div>
+          )}
+          {size && (
+            <div className="flex items-center">
+              <Square className="h-4 w-4 mr-1" />
+              {size}
+            </div>
+          )}
+        </div>
+        
+        <div className="flex space-x-2">
+          <Button className="flex-1 bg-primary-600 hover:bg-primary-700">
+            View Details
+          </Button>
+          <Button variant="outline" className="flex-1 hover:bg-primary-600 hover:text-white">
+            Inquire
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
+
+export default PropertyCard;
