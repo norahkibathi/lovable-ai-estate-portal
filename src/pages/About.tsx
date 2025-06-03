@@ -28,87 +28,6 @@ const About = () => {
     }
   ];
 
-  const keyPersonnel = [
-    {
-      name: "ERIC MADETE",
-      position: "Director",
-      qualifications: "Graduate in land Economics with over 23 years experience in property consultancy, construction and development.",
-      location: "Nairobi, Kenya"
-    },
-    {
-      name: "COSMAS WAFULA",
-      position: "Consultant Architect",
-      qualifications: "Graduate in Bachelor of Architecture with 20 years experience",
-      location: "Nairobi/ Kampala"
-    },
-    {
-      name: "MIKE GUMBI",
-      position: "Consultant Civil Engineer",
-      qualifications: "Graduate in BSC Civil Engineering with 19 years experience",
-      location: "Nairobi, Kenya"
-    },
-    {
-      name: "NANCY MWANGI",
-      position: "Surveyor",
-      qualifications: "BSC Survey with 17 years experience",
-      location: "Nairobi, Kenya"
-    },
-    {
-      name: "ALFAYO KIHIMA",
-      position: "Consultant",
-      qualifications: "Diploma in Water Engineering with over 20 years experience",
-      location: "Nairobi, Kenya"
-    },
-    {
-      name: "SOLOMON ISIAHO",
-      position: "Technical Director",
-      qualifications: "Diploma in Building Construction with 33 years experience in construction of commercial and residential properties as well as Project Management.",
-      location: "Nairobi, Kenya"
-    },
-    {
-      name: "BERTRAND NGAIYWA",
-      position: "Consultant",
-      qualifications: "Graduate in Building Economics with over 10 years experience in Quantity Survey and project management",
-      location: "Nairobi, Kenya"
-    },
-    {
-      name: "KENNEDY MASAI",
-      position: "Foreman",
-      qualifications: "Diploma in Building Construction. Has 6 years experience in the supervision of construction of both residential and commercial properties.",
-      location: "Hamisi, Kenya"
-    },
-    {
-      name: "HILLES ATONYA KISIAH",
-      position: "Finance Manager",
-      qualifications: "7 years experience in Financial and Project Management. Proficiency in ICT and Certificate in Strategic Planning.",
-      location: "Nairobi, Kenya"
-    },
-    {
-      name: "SAMWEL MALANGA",
-      position: "Pipe Fitter",
-      qualifications: "Certificate in Plumbing with over 35 years experience with government",
-      location: "Busia, Kenya"
-    },
-    {
-      name: "JOHN WAMBUGU",
-      position: "Electrician",
-      qualifications: "24 years experience",
-      location: "Nairobi, Kenya"
-    },
-    {
-      name: "DOUGLAS OGADA",
-      position: "Property Officer",
-      qualifications: "5 years experience in trade test grade 2 in masonry and certificate in ICT",
-      location: "Kisumu, Kenya"
-    },
-    {
-      name: "LOICE NYAMULLAH",
-      position: "Secretary",
-      qualifications: "Diploma in Business Management with 12 years experience",
-      location: "Nairobi, Kenya"
-    }
-  ];
-
   const values = [
     {
       icon: Target,
@@ -144,17 +63,23 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-              About EMM Consult Ltd
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Your trusted partner in real estate solutions across Kenya, 
-              providing professional services with integrity and excellence.
-            </p>
-          </div>
+      <section className="relative py-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+            About EMM Consult Ltd
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
+            Your trusted partner in real estate solutions across Kenya, 
+            providing professional services with integrity and excellence.
+          </p>
         </div>
       </section>
 
@@ -164,23 +89,31 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-6">
-                Our Story
+                Our Story & Heritage
               </h2>
               <div className="space-y-4 text-secondary-600 leading-relaxed">
                 <p>
                   Founded with a vision to revolutionize the real estate industry in Kenya, 
-                  EMM Consult Ltd has grown to become a trusted name in property valuation, 
-                  management, and consultancy services.
+                  EMM Consult Ltd has grown from a small consultancy firm to become one of the most 
+                  trusted names in property valuation, management, and development across East Africa.
                 </p>
                 <p>
-                  Under the leadership of Eric Madete, our team combines extensive local 
-                  market knowledge with international best practices to deliver exceptional 
-                  results for our clients.
+                  Our journey began over two decades ago when our founder, Eric Madete, identified 
+                  a critical gap in professional real estate services in Kenya. With his extensive 
+                  background in land economics and a passion for property development, he established 
+                  EMM Consult with the mission to provide accurate, reliable, and professional 
+                  real estate solutions.
                 </p>
                 <p>
-                  We pride ourselves on our commitment to accuracy, professionalism, and 
-                  client satisfaction, making us the preferred choice for individuals, 
-                  corporations, and financial institutions across Kenya.
+                  Today, we pride ourselves on our commitment to accuracy, professionalism, and 
+                  client satisfaction. Our team combines extensive local market knowledge with 
+                  international best practices, making us the preferred choice for individuals, 
+                  corporations, and financial institutions across Kenya and beyond.
+                </p>
+                <p>
+                  From humble beginnings in Nairobi, we have expanded our operations to cover 
+                  major urban centers across Kenya, handling everything from residential property 
+                  management to large-scale commercial developments and infrastructure projects.
                 </p>
               </div>
               
@@ -198,7 +131,7 @@ const About = () => {
             
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Modern office building"
                 className="rounded-2xl shadow-xl w-full h-[500px] object-cover"
               />
@@ -219,6 +152,15 @@ const About = () => {
       {/* Mission & Vision */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
+              Our Mission & Vision
+            </h2>
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
+              Guiding principles that drive our commitment to excellence in real estate services
+            </p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="text-center p-8 border-2 border-primary-200 hover:border-primary-400 transition-colors h-full">
               <CardHeader>
@@ -229,7 +171,8 @@ const About = () => {
                 <p className="text-secondary-600 leading-relaxed">
                   To be the leading real estate consultancy firm in East Africa, 
                   known for our professionalism, accuracy, and client-centric approach 
-                  in delivering comprehensive property solutions.
+                  in delivering comprehensive property solutions that drive economic growth 
+                  and sustainable development across the region.
                 </p>
               </CardContent>
             </Card>
@@ -243,7 +186,8 @@ const About = () => {
                 <p className="text-secondary-600 leading-relaxed">
                   To provide exceptional real estate services through innovative solutions, 
                   professional expertise, and unwavering commitment to our clients' success 
-                  while maintaining the highest standards of integrity.
+                  while maintaining the highest standards of integrity, transparency, and 
+                  ethical business practices in all our operations.
                 </p>
               </CardContent>
             </Card>
@@ -259,7 +203,7 @@ const About = () => {
               Our Core Values
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              The principles that guide everything we do
+              The fundamental principles that guide everything we do and define who we are
             </p>
           </div>
           
@@ -281,52 +225,15 @@ const About = () => {
         </div>
       </section>
 
-      {/* Key Personnel Section */}
-      <section id="personnel" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
-              Key Personnel
-            </h2>
-            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              Our experienced team of professionals driving project excellence
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {keyPersonnel.map((person, index) => (
-              <Card key={index} className="p-6 hover:shadow-xl transition-shadow h-full">
-                <CardContent className="p-0">
-                  <div className="mb-4">
-                    <h3 className="text-lg font-heading font-bold text-secondary-800 mb-2">
-                      {person.name}
-                    </h3>
-                    <Badge className="mb-3 bg-primary-100 text-primary-800">
-                      {person.position}
-                    </Badge>
-                  </div>
-                  <p className="text-secondary-600 text-sm mb-3 leading-relaxed">
-                    {person.qualifications}
-                  </p>
-                  <div className="text-xs text-secondary-500 bg-gray-100 px-3 py-2 rounded-lg">
-                    📍 {person.location}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20">
+      {/* Leadership Team */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
               Leadership Team
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              Experienced professionals dedicated to your success
+              Experienced professionals dedicated to driving our vision forward
             </p>
           </div>
           
@@ -363,14 +270,14 @@ const About = () => {
       </section>
 
       {/* Achievements */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
               Our Achievements
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              Milestones that reflect our commitment to excellence
+              Milestones that reflect our commitment to excellence and client satisfaction
             </p>
           </div>
           

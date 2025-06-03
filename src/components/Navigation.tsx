@@ -21,7 +21,7 @@ const Navigation = () => {
       href: '/about',
       submenu: [
         { name: 'Company Overview', href: '/about' },
-        { name: 'Key Personnel', href: '/about#personnel' },
+        { name: 'Key Personnel', href: '/about/personnel' },
       ]
     },
     { 

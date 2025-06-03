@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import About from "./pages/About";
+import KeyPersonnel from "./pages/KeyPersonnel";
 import Services from "./pages/Services";
 import ServicesValuation from "./pages/ServicesValuation";
 import ServicesManagement from "./pages/ServicesManagement";
@@ -35,6 +36,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
+              <Route path="/about/personnel" element={<KeyPersonnel />} />
               <Route path="/services" element={<Services />} />
               <Route path="/services/valuation" element={<ServicesValuation />} />
               <Route path="/services/management" element={<ServicesManagement />} />

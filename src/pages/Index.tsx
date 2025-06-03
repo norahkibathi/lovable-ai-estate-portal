@@ -122,17 +122,31 @@ const Index = () => {
       image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       status: "For Rent" as const,
       description: "Contemporary 3-bedroom apartment in the heart of Westlands with excellent amenities and city views."
+    }
+  ];
+
+  const managedProperties = [
+    {
+      id: "managed-1",
+      title: "Nyayo Embakasi Commercial Building",
+      location: "Embakasi, Nairobi",
+      price: "KSH 1,900,000/month",
+      type: "Commercial",
+      size: "Large Complex",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      status: "Managed" as const,
+      description: "Large commercial building with multiple units generating substantial rental income under professional management."
     },
     {
-      id: "3",
-      title: "Commercial Building",
-      location: "CBD, Nairobi",
-      price: "KSH 120,000,000",
-      type: "Commercial",
-      size: "800 sqm",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      status: "For Sale" as const,
-      description: "Prime commercial building in Nairobi CBD perfect for office spaces or retail outlets."
+      id: "managed-2",
+      title: "Stima View Apartments",
+      location: "Various Locations, Nairobi",
+      price: "KSH 1,800,000/month",
+      type: "Apartment Complex",
+      size: "Multi-unit",
+      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      status: "Managed" as const,
+      description: "Premium apartment complex with modern amenities and professional management services."
     }
   ];
 
@@ -146,17 +160,24 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-fade-in">
+            <div className="space-y-8 animate-fade-in text-white">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">
                 Your Trusted
                 <span className="block text-yellow-400">Real Estate</span>
                 Partner in Kenya
               </h1>
-              <p className="text-xl md:text-2xl text-blue-100 leading-relaxed">
+              <p className="text-xl md:text-2xl text-gray-200 leading-relaxed">
                 Professional property valuation, management, and consultancy services 
                 across Nairobi and beyond.
               </p>
@@ -169,7 +190,7 @@ const Index = () => {
                   </Button>
                 </Link>
                 <ValuationCalculator 
-                  triggerText="Estimate Property Value"
+                  triggerText="Get Property Valuation"
                   triggerVariant="outline"
                   triggerSize="lg"
                 />
@@ -177,30 +198,33 @@ const Index = () => {
 
               <div className="flex items-center space-x-8 pt-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold">15+</div>
-                  <div className="text-sm text-blue-200">Years Experience</div>
+                  <div className="text-2xl font-bold">23+</div>
+                  <div className="text-sm text-gray-200">Years Experience</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold">500+</div>
-                  <div className="text-sm text-blue-200">Properties</div>
+                  <div className="text-sm text-gray-200">Properties</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold">300+</div>
-                  <div className="text-sm text-blue-200">Happy Clients</div>
+                  <div className="text-sm text-gray-200">Happy Clients</div>
                 </div>
               </div>
             </div>
             
             <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Modern Real Estate Development"
-                className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white text-secondary-800 p-6 rounded-xl shadow-xl">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-2xl">
+                <div className="flex items-center space-x-2 mb-4">
+                  <CheckCircle className="h-6 w-6 text-green-400" />
+                  <span className="font-semibold text-white">Certified Professional Valuers</span>
+                </div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <CheckCircle className="h-6 w-6 text-green-400" />
+                  <span className="font-semibold text-white">Licensed Real Estate Agents</span>
+                </div>
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-6 w-6 text-green-500" />
-                  <span className="font-semibold">Certified Valuers</span>
+                  <CheckCircle className="h-6 w-6 text-green-400" />
+                  <span className="font-semibold text-white">23+ Years Experience</span>
                 </div>
               </div>
             </div>
@@ -256,7 +280,7 @@ const Index = () => {
           <div className="text-center mt-12">
             <Link to="/services">
               <Button size="lg" className="bg-primary-600 hover:bg-primary-700">
-                View All Services
+                Explore All Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -276,7 +300,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {featuredProperties.map((property, index) => (
               <div key={property.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <PropertyCard {...property} />
@@ -284,10 +308,41 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center">
             <Link to="/properties">
               <Button size="lg" variant="outline" className="hover:bg-primary-600 hover:text-white">
-                View All Properties
+                Browse All Properties
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Managed Properties Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
+              Our Managed Properties
+            </h2>
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
+              Professional property management services delivering consistent returns
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {managedProperties.map((property, index) => (
+              <div key={property.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <PropertyCard {...property} />
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/properties/managed">
+              <Button size="lg" variant="outline" className="hover:bg-primary-600 hover:text-white">
+                View All Managed Properties
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
