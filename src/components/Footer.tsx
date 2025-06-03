@@ -1,88 +1,121 @@
 
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const quickLinks = [
+    { name: 'About Us', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Properties', href: '/properties' },
+    { name: 'Contact', href: '/contact' }
+  ];
+
+  const services = [
+    { name: 'Property Valuation', href: '/services/valuation' },
+    { name: 'Property Management', href: '/services/management' },
+    { name: 'Sales & Marketing', href: '/services/sales' },
+    { name: 'Construction', href: '/services/construction' }
+  ];
+
   return (
-    <footer className="bg-secondary-800 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-secondary-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Footer Content */}
+        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
+          <div className="space-y-4">
+            <div className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">E</span>
               </div>
               <span className="font-heading font-bold text-xl">EMM Consult</span>
             </div>
-            <p className="text-secondary-300 mb-4">
-              Professional real estate services in Kenya. From property valuation to management, 
-              we provide comprehensive solutions for all your real estate needs.
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Your trusted partner in real estate solutions across Kenya, providing professional 
+              property valuation, management, and consultancy services with over 23 years of experience.
             </p>
-            <div className="space-y-2 text-sm">
-              <div className="flex items-center">
-                <MapPin className="h-4 w-4 mr-2 text-primary-400" />
-                <span>Nairobi, Kenya</span>
-              </div>
-              <div className="flex items-center">
-                <Phone className="h-4 w-4 mr-2 text-primary-400" />
-                <span>+254 733-448331</span>
-              </div>
-              <div className="flex items-center">
-                <Mail className="h-4 w-4 mr-2 text-primary-400" />
-                <span>info@emmconsult.com</span>
-              </div>
+            <div className="flex items-center space-x-2 text-sm text-gray-300">
+              <Clock className="h-4 w-4 text-primary-500" />
+              <span>Mon-Fri: 8:00 AM - 6:00 PM</span>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-heading font-semibold text-lg mb-4 text-primary-400">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-secondary-300 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/services" className="text-secondary-300 hover:text-white transition-colors">Our Services</Link></li>
-              <li><Link to="/properties" className="text-secondary-300 hover:text-white transition-colors">Properties</Link></li>
-              <li><Link to="/contact" className="text-secondary-300 hover:text-white transition-colors">Contact</Link></li>
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    to={link.href} 
+                    className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-4">Services</h3>
+            <h3 className="font-heading font-semibold text-lg mb-4 text-primary-400">Our Services</h3>
             <ul className="space-y-2">
-              <li><Link to="/services/valuation" className="text-secondary-300 hover:text-white transition-colors">Property Valuation</Link></li>
-              <li><Link to="/services/management" className="text-secondary-300 hover:text-white transition-colors">Property Management</Link></li>
-              <li><Link to="/services/sales" className="text-secondary-300 hover:text-white transition-colors">Sales & Marketing</Link></li>
-              <li><Link to="/services/construction" className="text-secondary-300 hover:text-white transition-colors">Construction</Link></li>
-              <li><Link to="/services/consultancy" className="text-secondary-300 hover:text-white transition-colors">Consultancy</Link></li>
+              {services.map((service) => (
+                <li key={service.href}>
+                  <Link 
+                    to={service.href} 
+                    className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
+                  >
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Contact Info */}
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-4">Stay Updated</h3>
-            <p className="text-secondary-300 mb-4">
-              Subscribe to our newsletter for the latest property insights and market updates.
-            </p>
-            <div className="space-y-2">
-              <Input 
-                type="email" 
-                placeholder="Your email address"
-                className="bg-secondary-700 border-secondary-600 text-white placeholder:text-secondary-400"
-              />
-              <Button className="w-full bg-primary-600 hover:bg-primary-700">
-                Subscribe
-              </Button>
+            <h3 className="font-heading font-semibold text-lg mb-4 text-primary-400">Contact Info</h3>
+            <div className="space-y-3">
+              <div className="flex items-start space-x-3">
+                <MapPin className="h-4 w-4 text-primary-500 mt-1 flex-shrink-0" />
+                <div className="text-sm text-gray-300">
+                  <p>Studio House, 1st Floor</p>
+                  <p>Plums Lane, Off Ojijo Road</p>
+                  <p>Westlands, Nairobi, Kenya</p>
+                  <p>P.O. Box 8949-00200</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone className="h-4 w-4 text-primary-500" />
+                <span className="text-sm text-gray-300">+254 733-448331</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="h-4 w-4 text-primary-500" />
+                <span className="text-sm text-gray-300">info@emmconsult.com</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-secondary-700 mt-8 pt-8 text-center">
-          <p className="text-secondary-400">
-            © 2024 EMM Consult Ltd. All rights reserved. Managed by Eric Madete.
-          </p>
+        {/* Bottom Footer */}
+        <div className="border-t border-gray-700 py-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center">
+            <div className="text-sm text-gray-400">
+              © {currentYear} EMM Consult Ltd. All rights reserved.
+            </div>
+            <div className="flex space-x-6 mt-4 sm:mt-0">
+              <Link to="/contact" className="text-sm text-gray-400 hover:text-primary-400 transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/contact" className="text-sm text-gray-400 hover:text-primary-400 transition-colors">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

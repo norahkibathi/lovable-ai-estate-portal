@@ -9,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import ValuationCalculator from '@/components/ValuationCalculator';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -113,9 +114,11 @@ const Navigation = () => {
                 </Link>
               )
             ))}
-            <Button className="bg-primary-600 hover:bg-primary-700">
-              Get Quote
-            </Button>
+            <ValuationCalculator 
+              triggerText="Get Quote"
+              triggerVariant="default"
+              triggerSize="default"
+            />
           </div>
 
           {/* Mobile menu button */}
@@ -164,9 +167,12 @@ const Navigation = () => {
                 </div>
               ))}
               <div className="px-3 py-2">
-                <Button className="w-full bg-primary-600 hover:bg-primary-700">
-                  Get Quote
-                </Button>
+                <ValuationCalculator 
+                  triggerText="Get Quote"
+                  triggerVariant="default"
+                  triggerSize="default"
+                  className="w-full"
+                />
               </div>
             </div>
           </div>

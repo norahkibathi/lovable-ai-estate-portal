@@ -8,6 +8,7 @@ import PropertyCard from '@/components/PropertyCard';
 import InfoCard from '@/components/InfoCard';
 import InfoModal from '@/components/InfoModal';
 import ValuationCalculator from '@/components/ValuationCalculator';
+import AnimatedCounter from '@/components/AnimatedCounter';
 import { ArrowRight, CheckCircle, Star, Users, Home, TrendingUp } from 'lucide-react';
 
 const Index = () => {
@@ -151,10 +152,10 @@ const Index = () => {
   ];
 
   const stats = [
-    { icon: Home, value: "500+", label: "Properties Managed" },
-    { icon: Users, value: "300+", label: "Happy Clients" },
-    { icon: TrendingUp, value: "95%", label: "Success Rate" },
-    { icon: Star, value: "4.9", label: "Client Rating" }
+    { icon: Home, value: 500, label: "Properties Managed" },
+    { icon: Users, value: 300, label: "Happy Clients" },
+    { icon: TrendingUp, value: 95, label: "Success Rate", suffix: "%" },
+    { icon: Star, value: 4.9, label: "Client Rating" }
   ];
 
   return (
@@ -280,7 +281,7 @@ const Index = () => {
           <div className="text-center mt-12">
             <Link to="/services">
               <Button size="lg" className="bg-primary-600 hover:bg-primary-700">
-                Explore All Services
+                View All Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -358,7 +359,9 @@ const Index = () => {
               <Card key={index} className="bg-white/10 border-white/20 text-center p-6 hover:bg-white/20 transition-colors">
                 <CardContent className="p-0">
                   <stat.icon className="h-8 w-8 mx-auto mb-4 text-yellow-400" />
-                  <div className="text-3xl font-bold mb-2">{stat.value}</div>
+                  <div className="text-3xl font-bold mb-2">
+                    <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                  </div>
                   <div className="text-blue-100">{stat.label}</div>
                 </CardContent>
               </Card>
