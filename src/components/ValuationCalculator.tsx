@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -8,17 +7,20 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Checkbox } from '@/components/ui/checkbox';
 import { Calculator } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { cn } from '@/lib/utils';
 
 interface ValuationCalculatorProps {
   triggerText?: string;
   triggerVariant?: 'default' | 'outline' | 'ghost';
   triggerSize?: 'sm' | 'default' | 'lg';
+  className?: string;
 }
 
 const ValuationCalculator = ({ 
   triggerText = "Calculate Property Value", 
   triggerVariant = "default",
-  triggerSize = "default"
+  triggerSize = "default",
+  className
 }: ValuationCalculatorProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [wantsValuation, setWantsValuation] = useState<boolean | null>(null);
@@ -200,7 +202,7 @@ const ValuationCalculator = ({
         <Button 
           variant={triggerVariant} 
           size={triggerSize}
-          className="bg-primary-600 hover:bg-primary-700"
+          className={cn("bg-primary-600 hover:bg-primary-700", className)}
         >
           <Calculator className="mr-2 h-4 w-4" />
           {triggerText}
