@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -280,7 +279,7 @@ const Index = () => {
 
           <div className="text-center mt-12">
             <Link to="/services">
-              <Button size="lg" className="bg-primary-600 hover:bg-primary-700">
+              <Button size="lg" className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
                 View All Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
