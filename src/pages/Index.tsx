@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -184,7 +185,7 @@ const Index = () => {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/properties">
-                  <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100 w-full sm:w-auto">
+                  <Button size="lg" className="bg-blue-600 hover:bg-black text-white transition-colors duration-300 w-full sm:w-auto">
                     Search Properties
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -310,7 +311,7 @@ const Index = () => {
 
           <div className="text-center">
             <Link to="/properties">
-              <Button size="lg" variant="outline" className="hover:bg-primary-600 hover:text-white">
+              <Button size="lg" className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
                 Browse All Properties
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -341,7 +342,7 @@ const Index = () => {
 
           <div className="text-center">
             <Link to="/properties/managed">
-              <Button size="lg" variant="outline" className="hover:bg-primary-600 hover:text-white">
+              <Button size="lg" className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
                 View All Managed Properties
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -382,13 +383,13 @@ const Index = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
-              <Button size="lg" className="bg-primary-600 hover:bg-primary-700 w-full sm:w-auto">
+              <Button size="lg" className="bg-blue-600 hover:bg-black text-white transition-colors duration-300 w-full sm:w-auto">
                 Get a Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary-800 w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-colors duration-300 w-full sm:w-auto">
                 Contact Us
               </Button>
             </Link>
