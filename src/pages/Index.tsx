@@ -278,13 +278,21 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Link to="/services">
-              <Button size="lg" className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
-                View All Services
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+          <div className="text-center mt-16">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/services">
+                <Button size="lg" className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
+                  View All Services
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-colors duration-300">
+                  Learn More
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

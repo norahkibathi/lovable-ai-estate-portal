@@ -170,34 +170,40 @@ const Properties = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-              Find Your Perfect Property
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8">
-              Discover premium properties across Nairobi's most sought-after locations
-            </p>
-            
-            {/* Quick Navigation */}
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <Link to="/properties/showcase">
-                <Button variant="outline" className="text-white border-white hover:bg-white hover:text-primary-600">
-                  Showcase Properties
-                </Button>
-              </Link>
-              <Link to="/properties/current">
-                <Button variant="outline" className="text-white border-white hover:bg-white hover:text-primary-600">
-                  Current Listings
-                </Button>
-              </Link>
-              <Link to="/properties/managed">
-                <Button variant="outline" className="text-white border-white hover:bg-white hover:text-primary-600">
-                  Managed Properties
-                </Button>
-              </Link>
-            </div>
+      <section className="relative py-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+            Find Your Perfect Property
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8">
+            Discover premium properties across Nairobi's most sought-after locations
+          </p>
+          
+          {/* Quick Navigation */}
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
+            <Link to="/properties/showcase">
+              <Button className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
+                Showcase Properties
+              </Button>
+            </Link>
+            <Link to="/properties/current">
+              <Button className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
+                Current Listings
+              </Button>
+            </Link>
+            <Link to="/properties/managed">
+              <Button className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
+                Managed Properties
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
