@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -9,7 +8,7 @@ import InfoCard from '@/components/InfoCard';
 import InfoModal from '@/components/InfoModal';
 import ValuationCalculator from '@/components/ValuationCalculator';
 import AnimatedCounter from '@/components/AnimatedCounter';
-import { ArrowRight, CheckCircle, Star, Users, Home, TrendingUp } from 'lucide-react';
+import { ArrowRight, CheckCircle, Star, Users, Home, TrendingUp, Phone, Fax, Smartphone, MapPin, Mail, Clock } from 'lucide-react';
 
 const Index = () => {
   const [selectedInfo, setSelectedInfo] = useState<any>(null);
@@ -94,6 +93,20 @@ const Index = () => {
       icon: "💼",
       link: "/services/sales",
       image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Construction Services",
+      description: "Professional construction and development services for residential and commercial projects.",
+      icon: "🏗️",
+      link: "/services/construction",
+      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Real Estate Consultancy",
+      description: "Expert consultancy services for property investment, market analysis, and strategic planning.",
+      icon: "🎯",
+      link: "/services/consultancy",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -270,7 +283,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {services.map((service, index) => (
               <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <ServiceCard {...service} />
@@ -278,17 +291,64 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center mt-16">
+          {/* Contact Information Section */}
+          <div className="bg-gray-50 rounded-2xl p-8 mb-12">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-heading font-bold text-secondary-800 mb-4">
+                Get In Touch With Us
+              </h3>
+              <p className="text-secondary-600">
+                Ready to discuss your real estate needs? Contact us through any of the following channels:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+                <Phone className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+                <h4 className="font-semibold text-secondary-800 mb-2">Office Line</h4>
+                <p className="text-secondary-600 text-sm">+254 (20) 2358577</p>
+              </div>
+              
+              <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+                <Fax className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+                <h4 className="font-semibold text-secondary-800 mb-2">Tel/Fax</h4>
+                <p className="text-secondary-600 text-sm">+254 (20) 3748850</p>
+              </div>
+              
+              <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+                <Smartphone className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+                <h4 className="font-semibold text-secondary-800 mb-2">Mobile</h4>
+                <p className="text-secondary-600 text-sm">+254 (0) 733-448331</p>
+              </div>
+              
+              <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+                <Mail className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+                <h4 className="font-semibold text-secondary-800 mb-2">Email</h4>
+                <p className="text-secondary-600 text-sm">info@emmconsult.com</p>
+              </div>
+            </div>
+
+            <div className="text-center bg-white rounded-xl p-6 shadow-sm">
+              <MapPin className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+              <h4 className="font-semibold text-secondary-800 mb-2">Visit Our Office</h4>
+              <p className="text-secondary-600">
+                Studio House, 1st Floor, Plums Lane, Off Ojijo Road, Westlands, Nairobi
+              </p>
+              <p className="text-secondary-500 text-sm mt-1">P.O. Box 8949-00200, Nairobi, Kenya</p>
+            </div>
+          </div>
+
+          <div className="text-center">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/services">
-                <Button size="lg" className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
-                  View All Services
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
               <Link to="/about">
                 <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-colors duration-300">
                   Learn More
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to="/services">
+                <Button size="lg" className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
+                  View All Services
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
