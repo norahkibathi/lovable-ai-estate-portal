@@ -278,70 +278,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Information Cards Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
-              Our Expertise
-            </h2>
-            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              Comprehensive real estate solutions backed by years of experience and industry expertise
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {infoCards.map((card, index) => (
-              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <InfoCard 
-                  {...card} 
-                  onClick={() => setSelectedInfo(card)}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
-              Our Professional Services
-            </h2>
-            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              Comprehensive real estate solutions tailored to meet your specific needs
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {services.map((service, index) => (
-              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <ServiceCard {...service} />
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <div className="flex flex-col gap-4 justify-center">
-              <Link to="/about">
-                <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-colors duration-300">
-                  Learn More
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link to="/services">
-                <Button size="lg" className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
-                  View All Services
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Managed Properties Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -366,6 +302,62 @@ const Index = () => {
             <Link to="/properties/managed">
               <Button size="lg" className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
                 View All Managed Properties
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Information Cards Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
+              Our Expertise
+            </h2>
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
+              Comprehensive real estate solutions backed by years of experience and industry expertise
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {infoCards.map((card, index) => (
+              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <InfoCard 
+                  {...card} 
+                  onClick={() => setSelectedInfo(card)}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
+              Our Professional Services
+            </h2>
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
+              Comprehensive real estate solutions tailored to meet your specific needs
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {services.map((service, index) => (
+              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <ServiceCard {...service} />
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/services">
+              <Button size="lg" className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
+                View All Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>

@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle, Award, Users, Target, Eye, Heart } from 'lucide-react';
@@ -9,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import Autoplay from "embla-carousel-autoplay";
 
 const About = () => {
   const teamMembers = [
@@ -256,7 +256,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Leadership Team Carousel */}
+      {/* Leadership Team Carousel with Auto-slide */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -268,7 +268,14 @@ const About = () => {
             </p>
           </div>
           
-          <Carousel className="w-full max-w-4xl mx-auto">
+          <Carousel 
+            className="w-full max-w-4xl mx-auto"
+            plugins={[
+              Autoplay({
+                delay: 4000,
+              }),
+            ]}
+          >
             <CarouselContent>
               {teamMembers.map((member, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
