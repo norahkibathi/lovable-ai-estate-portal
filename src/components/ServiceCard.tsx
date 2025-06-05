@@ -39,9 +39,9 @@ const ServiceCard = ({ title, description, icon, link, image }: ServiceCardProps
           {description}
         </CardDescription>
         <Link to={link}>
-          <Button variant="outline" className="w-full group-hover:bg-primary-600 group-hover:text-white group-hover:border-primary-600 transition-all">
+          <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white transition-all">
             Learn More
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </Link>
       </CardContent>

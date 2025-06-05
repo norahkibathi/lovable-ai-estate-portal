@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -8,7 +9,7 @@ import InfoCard from '@/components/InfoCard';
 import InfoModal from '@/components/InfoModal';
 import ValuationCalculator from '@/components/ValuationCalculator';
 import AnimatedCounter from '@/components/AnimatedCounter';
-import { ArrowRight, CheckCircle, Star, Users, Home, TrendingUp, Phone, Printer, Smartphone, MapPin, Mail, Clock } from 'lucide-react';
+import { ArrowRight, CheckCircle, Star, Users, Home, TrendingUp } from 'lucide-react';
 
 const Index = () => {
   const [selectedInfo, setSelectedInfo] = useState<any>(null);
@@ -246,6 +247,37 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Featured Properties */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
+              Featured Properties
+            </h2>
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
+              Discover premium properties across Nairobi's most sought-after locations
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {featuredProperties.map((property, index) => (
+              <div key={property.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <PropertyCard {...property} />
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/properties">
+              <Button size="lg" className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
+                Browse All Properties
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Information Cards Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -291,53 +323,6 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Contact Information Section */}
-          <div className="bg-gray-50 rounded-2xl p-8 mb-12">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-heading font-bold text-secondary-800 mb-4">
-                Get In Touch With Us
-              </h3>
-              <p className="text-secondary-600">
-                Ready to discuss your real estate needs? Contact us through any of the following channels:
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-              <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-                <Phone className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-secondary-800 mb-2">Office Line</h4>
-                <p className="text-secondary-600 text-sm">+254 (20) 2358577</p>
-              </div>
-              
-              <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-                <Printer className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-secondary-800 mb-2">Tel/Fax</h4>
-                <p className="text-secondary-600 text-sm">+254 (20) 3748850</p>
-              </div>
-              
-              <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-                <Smartphone className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-secondary-800 mb-2">Mobile</h4>
-                <p className="text-secondary-600 text-sm">+254 (0) 733-448331</p>
-              </div>
-              
-              <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-                <Mail className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-secondary-800 mb-2">Email</h4>
-                <p className="text-secondary-600 text-sm">info@emmconsult.com</p>
-              </div>
-            </div>
-
-            <div className="text-center bg-white rounded-xl p-6 shadow-sm">
-              <MapPin className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-              <h4 className="font-semibold text-secondary-800 mb-2">Visit Our Office</h4>
-              <p className="text-secondary-600">
-                Studio House, 1st Floor, Plums Lane, Off Ojijo Road, Westlands, Nairobi
-              </p>
-              <p className="text-secondary-500 text-sm mt-1">P.O. Box 8949-00200, Nairobi, Kenya</p>
-            </div>
-          </div>
-
           <div className="text-center">
             <div className="flex flex-col gap-4 justify-center">
               <Link to="/about">
@@ -357,39 +342,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Properties */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">
-              Featured Properties
-            </h2>
-            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              Discover premium properties across Nairobi's most sought-after locations
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {featuredProperties.map((property, index) => (
-              <div key={property.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <PropertyCard {...property} />
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link to="/properties">
-              <Button size="lg" className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
-                Browse All Properties
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Managed Properties Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-800 mb-4">

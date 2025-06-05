@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Linkedin, Instagram, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Printer, Smartphone, Mail, Clock, Facebook, Twitter, Linkedin, Instagram, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
@@ -17,7 +17,8 @@ const Footer = () => {
     { name: 'Property Valuation', href: '/services/valuation' },
     { name: 'Property Management', href: '/services/management' },
     { name: 'Sales & Marketing', href: '/services/sales' },
-    { name: 'Construction', href: '/services/construction' }
+    { name: 'Construction', href: '/services/construction' },
+    { name: 'Real Estate Consultancy', href: '/services/consultancy' }
   ];
 
   const socialLinks = [
@@ -32,7 +33,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">E</span>
@@ -43,23 +44,54 @@ const Footer = () => {
               Your trusted partner in real estate solutions across Kenya. We provide professional 
               property valuation, management, and consultancy services.
             </p>
-            
-            <div className="space-y-2">
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-4 w-4 text-primary-400" />
-                <span className="text-sm text-gray-300">Studio House, 1st Floor, Plums Lane, Off Ojijo Road, Westlands</span>
+          </div>
+
+          {/* Contact Information */}
+          <div>
+            <h3 className="font-heading font-semibold text-lg mb-4">Get In Touch</h3>
+            <div className="space-y-3">
+              <div className="flex items-start space-x-3">
+                <Phone className="h-4 w-4 text-primary-400 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-gray-300">Office Line</p>
+                  <p className="text-sm text-white">+254 (20) 2358577</p>
+                </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-primary-400" />
-                <span className="text-sm text-gray-300">+254 733-448331</span>
+              <div className="flex items-start space-x-3">
+                <Printer className="h-4 w-4 text-primary-400 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-gray-300">Tel/Fax</p>
+                  <p className="text-sm text-white">+254 (20) 3748850</p>
+                </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 text-primary-400" />
-                <span className="text-sm text-gray-300">info@emmconsult.com</span>
+              <div className="flex items-start space-x-3">
+                <Smartphone className="h-4 w-4 text-primary-400 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-gray-300">Mobile</p>
+                  <p className="text-sm text-white">+254 (0) 733-448331</p>
+                </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <Clock className="h-4 w-4 text-primary-400" />
-                <span className="text-sm text-gray-300">Mon-Fri: 8:00 AM - 6:00 PM</span>
+              <div className="flex items-start space-x-3">
+                <Mail className="h-4 w-4 text-primary-400 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-gray-300">Email</p>
+                  <p className="text-sm text-white">info@emmconsult.com</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <MapPin className="h-4 w-4 text-primary-400 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-gray-300">Address</p>
+                  <p className="text-sm text-white">Studio House, 1st Floor, Plums Lane, Off Ojijo Road, Westlands, Nairobi</p>
+                  <p className="text-xs text-gray-400 mt-1">P.O. Box 8949-00200, Nairobi, Kenya</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <Clock className="h-4 w-4 text-primary-400 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-gray-300">Hours</p>
+                  <p className="text-sm text-white">Mon-Fri: 8:00 AM - 6:00 PM</p>
+                </div>
               </div>
             </div>
           </div>
