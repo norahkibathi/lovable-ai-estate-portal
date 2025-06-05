@@ -8,7 +8,7 @@ import InfoCard from '@/components/InfoCard';
 import InfoModal from '@/components/InfoModal';
 import ValuationCalculator from '@/components/ValuationCalculator';
 import AnimatedCounter from '@/components/AnimatedCounter';
-import { ArrowRight, CheckCircle, Star, Users, Home, TrendingUp, Phone, Fax, Smartphone, MapPin, Mail, Clock } from 'lucide-react';
+import { ArrowRight, CheckCircle, Star, Users, Home, TrendingUp, Phone, Printer, Smartphone, MapPin, Mail, Clock } from 'lucide-react';
 
 const Index = () => {
   const [selectedInfo, setSelectedInfo] = useState<any>(null);
@@ -310,7 +310,7 @@ const Index = () => {
               </div>
               
               <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-                <Fax className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+                <Printer className="h-8 w-8 text-blue-600 mx-auto mb-3" />
                 <h4 className="font-semibold text-secondary-800 mb-2">Tel/Fax</h4>
                 <p className="text-secondary-600 text-sm">+254 (20) 3748850</p>
               </div>
@@ -339,7 +339,7 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col gap-4 justify-center">
               <Link to="/about">
                 <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-colors duration-300">
                   Learn More
