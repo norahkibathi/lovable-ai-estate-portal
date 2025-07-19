@@ -4,6 +4,8 @@ import { Badge } from '@/components/ui/badge';
 import { MapPin, BedDouble, Bath, Square } from 'lucide-react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import PropertyDetailsModal from './PropertyDetailsModal';
+import { useState } from 'react';
 
 export interface PropertyCardProps {
   id: string;
@@ -23,21 +25,24 @@ export interface PropertyCardProps {
   availableFrom?: string;
 }
 
-const PropertyCard = ({
-  title,
-  location,
-  price,
-  type,
-  bedrooms,
-  bathrooms,
-  size,
-  image,
-  images = [],
-  video,
-  status,
-  description,
-  availableFrom,
-}: PropertyCardProps) => {
+const PropertyCard = (props: PropertyCardProps) => {
+  const {
+    title,
+    location,
+    price,
+    type,
+    bedrooms,
+    bathrooms,
+    size,
+    image,
+    images = [],
+    video,
+    status,
+    description,
+    availableFrom,
+  } = props;
+  
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'For Sale':
@@ -179,9 +184,7 @@ const PropertyCard = ({
         <div className="flex space-x-2">
           <Button 
             className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
-            onClick={() => {
-              alert(`View Details for: ${title}`);
-            }}
+            onClick={() => setIsModalOpen(true)}
           >
             View Details
           </Button>
@@ -196,6 +199,12 @@ const PropertyCard = ({
           </Button>
         </div>
       </CardContent>
+      
+      <PropertyDetailsModal 
+        property={props}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </Card>
   );
 };

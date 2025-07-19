@@ -12,14 +12,14 @@ const PropertiesCurrent = () => {
       bathrooms: 3,
       size: "200 sqm",
       images: [
-        "/media/WhatsApp_Image_2025-07-02_at_11.19.25_1.jpeg",
-        "/media/WhatsApp_Image_2025-07-02_at_11.19.24.jpeg",
-        "/media/WhatsApp_Image_2025-07-02_at_11.19.24_2.jpeg",
-        "/media/WhatsApp_Image_2025-07-02_at_11.19.24_1.jpeg",
-        "/media/WhatsApp_Image_2025-07-02_at_11.19.23.jpeg",
-        "/media/WhatsApp_Image_2025-07-02_at_11.19.22.jpeg",
+        "/WhatsApp Image 2025-07-02 at 11.19.25 (1).jpeg",
+        "/WhatsApp Image 2025-07-02 at 11.19.24.jpeg",
+        "/WhatsApp Image 2025-07-02 at 11.19.24 (2).jpeg",
+        "/WhatsApp Image 2025-07-02 at 11.19.24 (1).jpeg",
+        "/WhatsApp Image 2025-07-02 at 11.19.23.jpeg",
+        "/WhatsApp Image 2025-07-02 at 11.19.22.jpeg",
       ],
-      video: "/media/WhatsApp_Video_2025-07-02_at_11.19.26.mp4",
+      video: "/WhatsApp Video 2025-07-02 at 11.19.26.mp4",
       status: "For Rent",
       description: `Unfurnished 4-bedroom apartment available to let on Rhapta Road, Westlands. Located in a UN-approved compound, this spacious apartment offers:
       - 4 bedrooms (3 en-suite)
