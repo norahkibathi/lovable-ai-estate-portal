@@ -125,13 +125,7 @@ const Index = () => {
         "/lovable-uploads/8b6b0e4d-7e8b-4d60-a644-35e23be3fe02.png",
         "/lovable-uploads/faab29c6-643b-458c-b54f-ca1fdbc54e3b.png",
         "/lovable-uploads/6b092863-cda3-4f1e-8a4a-b1521bc67dd0.png",
-        "/lovable-uploads/a7691ff1-7849-4632-8d8f-c0052ad15066.png",
-        "/lovable-uploads/1866fa3b-4c49-405d-9605-da3523e12339.png",
-        "/lovable-uploads/8c9516c6-0a60-4c4f-a487-6070f11ebc07.png",
-        "/lovable-uploads/175e1dfa-e13b-482d-a68c-2b1da02109cc.png",
-        "/lovable-uploads/ca32370d-b749-4271-a3c1-2b3c2f7a1565.png",
-        "/lovable-uploads/d7b006ef-30ca-48ed-9cf2-bdf9c3f8a8dc.png",
-        "/lovable-uploads/39b4bdf5-b971-48d2-b5ca-758520f8ed40.png"
+        "/lovable-uploads/a7691ff1-7849-4632-8d8f-c0052ad15066.png"
       ],
       status: "For Rent" as const,
       description: "Unfurnished 4-bedroom apartment in UN approved compound. Features spacious living room with balcony, kitchen with pantry, 3 en-suite bedrooms, gym, parking for 2 cars, highly secured compound with natural lighting.",
@@ -277,22 +271,6 @@ const Index = () => {
                 <PropertyCard {...property} />
               </div>
             ))}
-          </div>
-
-          {/* Video Section */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
-                <iframe 
-                  src="https://player.vimeo.com/video/1102687296?badge=0&autopause=0&player_id=0&app_id=58479" 
-                  frameBorder="0" 
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                  referrerPolicy="strict-origin-when-cross-origin" 
-                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} 
-                  title="WhatsApp Video 2025-07-02 at 11.19.26"
-                />
-              </div>
-            </div>
           </div>
 
           <div className="text-center">
