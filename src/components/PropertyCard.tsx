@@ -178,22 +178,18 @@ const PropertyCard = ({
         )}
         <div className="flex space-x-2">
           <Button 
-            className="flex-1 bg-primary-600 hover:bg-primary-700"
+            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
             onClick={() => {
-              // For now, log the action - can be replaced with actual functionality
-              console.log('View Details clicked for:', title);
-              // You can add navigation to detail page or modal opening here
+              alert(`View Details for: ${title}`);
             }}
           >
             View Details
           </Button>
           <Button 
             variant="outline" 
-            className="flex-1 hover:bg-primary-600 hover:text-white"
+            className="flex-1 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
             onClick={() => {
-              // For now, log the action - can be replaced with actual functionality
-              console.log('Inquire clicked for:', title);
-              // You can add contact form opening or navigation here
+              alert(`Inquiry for: ${title}\nContact us at info@example.com`);
             }}
           >
             Inquire

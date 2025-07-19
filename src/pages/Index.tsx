@@ -130,6 +130,19 @@ const Index = () => {
       status: "For Rent" as const,
       description: "Unfurnished 4-bedroom apartment in UN approved compound. Features spacious living room with balcony, kitchen with pantry, 3 en-suite bedrooms, gym, parking for 2 cars, highly secured compound with natural lighting.",
       availableFrom: "2024-07-01"
+    },
+    {
+      id: "2",
+      title: "Luxury Villa in Karen",
+      location: "Karen, Nairobi",
+      price: "KSH 85,000,000",
+      type: "Villa",
+      bedrooms: 6,
+      bathrooms: 5,
+      size: "450 sqm",
+      image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      status: "For Sale" as const,
+      description: "Stunning 6-bedroom luxury villa with premium finishes and world-class amenities in the prestigious Karen neighborhood."
     }
   ];
 
