@@ -114,35 +114,58 @@ const Index = () => {
   const featuredProperties = [
     {
       id: "1",
-      title: "Modern Villa in Karen",
-      location: "Karen, Nairobi",
-      price: "KSH 45,000,000",
-      type: "Villa",
-      bedrooms: 5,
-      bathrooms: 4,
-      size: "350 sqm",
-      image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      status: "For Sale" as const,
-      description: "Luxurious 5-bedroom villa with modern amenities, swimming pool, and beautiful garden in the prestigious Karen area."
-    },
-    {
-      id: "2",
-      title: "Executive Apartment",
-      location: "Westlands, Nairobi",
-      price: "KSH 180,000/month",
+      title: "Westlands - 4 Bedroom Apartment",
+      location: "Rhapta Road, Westlands, Nairobi",
+      price: "KSH 160,000/month",
       type: "Apartment",
-      bedrooms: 3,
-      bathrooms: 2,
-      size: "140 sqm",
-      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      bedrooms: 4,
+      bathrooms: 3,
+      size: "Spacious",
+      images: [
+        "/lovable-uploads/8b6b0e4d-7e8b-4d60-a644-35e23be3fe02.png",
+        "/lovable-uploads/faab29c6-643b-458c-b54f-ca1fdbc54e3b.png",
+        "/lovable-uploads/6b092863-cda3-4f1e-8a4a-b1521bc67dd0.png",
+        "/lovable-uploads/a7691ff1-7849-4632-8d8f-c0052ad15066.png",
+        "/lovable-uploads/1866fa3b-4c49-405d-9605-da3523e12339.png",
+        "/lovable-uploads/8c9516c6-0a60-4c4f-a487-6070f11ebc07.png",
+        "/lovable-uploads/175e1dfa-e13b-482d-a68c-2b1da02109cc.png",
+        "/lovable-uploads/ca32370d-b749-4271-a3c1-2b3c2f7a1565.png",
+        "/lovable-uploads/d7b006ef-30ca-48ed-9cf2-bdf9c3f8a8dc.png",
+        "/lovable-uploads/39b4bdf5-b971-48d2-b5ca-758520f8ed40.png"
+      ],
       status: "For Rent" as const,
-      description: "Contemporary 3-bedroom apartment in the heart of Westlands with excellent amenities and city views."
+      description: "Unfurnished 4-bedroom apartment in UN approved compound. Features spacious living room with balcony, kitchen with pantry, 3 en-suite bedrooms, gym, parking for 2 cars, highly secured compound with natural lighting.",
+      availableFrom: "2024-07-01"
     }
   ];
 
   const managedProperties = [
     {
       id: "managed-1",
+      title: "Westlands Premium Apartments",
+      location: "Rhapta Road, Westlands, Nairobi",
+      price: "KSH 160,000/month",
+      type: "Apartment",
+      bedrooms: 4,
+      bathrooms: 3,
+      size: "Spacious",
+      images: [
+        "/lovable-uploads/8b6b0e4d-7e8b-4d60-a644-35e23be3fe02.png",
+        "/lovable-uploads/faab29c6-643b-458c-b54f-ca1fdbc54e3b.png",
+        "/lovable-uploads/6b092863-cda3-4f1e-8a4a-b1521bc67dd0.png",
+        "/lovable-uploads/a7691ff1-7849-4632-8d8f-c0052ad15066.png",
+        "/lovable-uploads/1866fa3b-4c49-405d-9605-da3523e12339.png",
+        "/lovable-uploads/8c9516c6-0a60-4c4f-a487-6070f11ebc07.png",
+        "/lovable-uploads/175e1dfa-e13b-482d-a68c-2b1da02109cc.png",
+        "/lovable-uploads/ca32370d-b749-4271-a3c1-2b3c2f7a1565.png",
+        "/lovable-uploads/d7b006ef-30ca-48ed-9cf2-bdf9c3f8a8dc.png",
+        "/lovable-uploads/39b4bdf5-b971-48d2-b5ca-758520f8ed40.png"
+      ],
+      status: "Managed" as const,
+      description: "Professionally managed 4-bedroom apartment in secure UN approved compound. Close to ABC Place, Sarit Centre, Westgate Shopping Centre, schools and amenities."
+    },
+    {
+      id: "managed-2",
       title: "Nyayo Embakasi Commercial Building",
       location: "Embakasi, Nairobi",
       price: "KSH 1,900,000/month",
@@ -151,17 +174,6 @@ const Index = () => {
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       status: "Managed" as const,
       description: "Large commercial building with multiple units generating substantial rental income under professional management."
-    },
-    {
-      id: "managed-2",
-      title: "Stima View Apartments",
-      location: "Various Locations, Nairobi",
-      price: "KSH 1,800,000/month",
-      type: "Apartment Complex",
-      size: "Multi-unit",
-      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      status: "Managed" as const,
-      description: "Premium apartment complex with modern amenities and professional management services."
     }
   ];
 

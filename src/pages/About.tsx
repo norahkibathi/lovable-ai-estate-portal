@@ -273,7 +273,7 @@ const About = () => {
             plugins={[
               Autoplay({
                 delay: 4000,
-              }),
+              }) as any,
             ]}
           >
             <CarouselContent>
