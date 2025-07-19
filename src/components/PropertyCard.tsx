@@ -5,6 +5,7 @@ import { MapPin, BedDouble, Bath, Square } from 'lucide-react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import PropertyDetailsModal from './PropertyDetailsModal';
+import InquireModal from './InquireModal';
 import { useState } from 'react';
 
 export interface PropertyCardProps {
@@ -43,6 +44,7 @@ const PropertyCard = (props: PropertyCardProps) => {
   } = props;
   
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isInquireOpen, setIsInquireOpen] = useState(false);
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'For Sale':
@@ -191,9 +193,7 @@ const PropertyCard = (props: PropertyCardProps) => {
           <Button 
             variant="outline" 
             className="flex-1 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
-            onClick={() => {
-              alert(`Inquiry for: ${title}\nContact us at info@example.com`);
-            }}
+            onClick={() => setIsInquireOpen(true)}
           >
             Inquire
           </Button>
@@ -204,6 +204,12 @@ const PropertyCard = (props: PropertyCardProps) => {
         property={props}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+      />
+      
+      <InquireModal 
+        property={props}
+        isOpen={isInquireOpen}
+        onClose={() => setIsInquireOpen(false)}
       />
     </Card>
   );

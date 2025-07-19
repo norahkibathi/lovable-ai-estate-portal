@@ -67,6 +67,7 @@ const PropertiesCurrent = () => {
         "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1513694232788-9f93ed7f5c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       ],
+      video: "/WhatsApp Video 2025-07-02 at 11.19.26.mp4",
       status: "Managed",
       description: `Contemporary 2-bedroom apartment in the heart of Kilimani, offering:
       - 2 spacious bedrooms (1 en-suite)
