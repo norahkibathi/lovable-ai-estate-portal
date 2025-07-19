@@ -279,6 +279,22 @@ const Index = () => {
             ))}
           </div>
 
+          {/* Video Section */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+                <iframe 
+                  src="https://player.vimeo.com/video/1102687296?badge=0&autopause=0&player_id=0&app_id=58479" 
+                  frameBorder="0" 
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} 
+                  title="WhatsApp Video 2025-07-02 at 11.19.26"
+                />
+              </div>
+            </div>
+          </div>
+
           <div className="text-center">
             <Link to="/properties">
               <Button size="lg" className="bg-blue-600 hover:bg-black text-white transition-colors duration-300">
